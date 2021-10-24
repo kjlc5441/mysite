@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首頁</title>
+</head>
+<body>
+
+<h3> --EC_POS紅綠燈管制-- </h3>
+
+<!--{{ request.session }}-->
+{% if request.session.username %}
+    <P>
+        歡迎 {{ request.session.username }}
+    </P>
+
+<table border="1">
+
+    <tr>
+        <th>呷霸卡</th>
+        <th>悠遊卡</th>
+        <th>台灣pay</th>
+    </tr>
+    {% for item in status %}
+    <tr>
+        <td>{{ item.gbpay }}</td>
+        <td>{{ item.uupay }}</td>
+        <td>{{ item.twpay }}</td>
+        <td><a href="/control/update/1">設定</a></td>
+    </tr>  
+    {% endfor %}
+
+</table>
+<p>(001 服務正常; 002 服務暫停)</P>
+<tr>
+    <a href="/user/logout">退出</a>
+</tr>
+
+<!--{{ request.COOKIES }}-->
+{% else %}
+    {% if request.COOKIES.username %}
+    <P>
+        歡迎 {{ request.COOKIES.username }}
+    </P>
+    <tr>
+        <a href="/user/logout">退出</a>
+    </tr>
+   
+    {% else %}
+    <tr>
+        <a href="/user/login">登入</a>
+    </tr>
+
+    {% endif %}
+
+{% endif %}
+
+</body>
+</html>

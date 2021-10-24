@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更改燈號設定</title>
+</head>
+<body>
+<form action="/control/update/{{ 1 }}" method="post">
+    <p>
+        呷霸卡<input type="text" name="gbpay" value="{{ flag.gbpay }}" >
+    </p>
+    <p>
+        悠遊卡<input type="text" name="uupay" value="{{ flag.uupay }}" >
+    </p>
+    <P>
+        台灣pay<input type="text" name="twpay" value="{{ flag.twpay }}" >
+    </P>
+    
+    <p>(001 服務正常; 002 服務暫停)</P>
+   
+    <P>
+        <input type="submit" value="更新">
+    </P>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>燈號狀態</title>
+</head>
+<body>
+
+<table border="1">
+
+    <tr>
+        <th>呷霸卡</th>
+        <th>悠遊卡</th>
+        <th>台灣pay</th>
+    </tr>
+
+   {% for item in status %}
+    <tr>
+        <td>{{ item.gbpay }}</td>
+        <td>{{ item.uupay }}</td>
+        <td>{{ item.twpay }}</td>
+    </tr>  
+           
+   {% endfor %}
+
+</table>
+
+</body>
+</html>
