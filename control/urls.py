@@ -10,4 +10,10 @@ urlpatterns =[
 
     path('update/1',views.update_status),
 
+    path('update_cos/1',views.update_cos),
+
+    path('index',views.lan_status),
+
+    path('NEWCOS',views.cos_status),
+
 ]

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>雲端訂單設定</title>
+</head>
+<body>
+<form action="/control/update_cos/{{ 1 }}" method="post">
+    <p>
+        雲端訂單<input type="text" name="cos" value="{{cos.cos_db}}" >
+    </p>
+    
+    <p>(OK 服務正常; NO 服務暫停)</P> 
+
+    <P>
+        <input type="submit" value="更新">
+    </P>
+</form>
+
+
+</body>
+</html>

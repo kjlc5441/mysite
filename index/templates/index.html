@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>首頁</title>
+    <title>維護後台</title>
 </head>
 <body>
 
-<h3> --EC_POS紅綠燈管制-- </h3>
+<h1> EC POS管制台 </h1>
 
 <!--{{ request.session }}-->
 {% if request.session.username %}
@@ -15,7 +15,6 @@
     </P>
 
 <table border="1">
-
     <tr>
         <th>呷霸卡</th>
         <th>悠遊卡</th>
@@ -29,9 +28,24 @@
         <td><a href="/control/update/1">設定</a></td>
     </tr>  
     {% endfor %}
-
 </table>
 <p>(001 服務正常; 002 服務暫停)</P>
+
+<table border="1">
+    <tr>
+        <th>雲端訂單</th>
+    </tr>
+    {% for item in cos_data %}
+    <tr>
+        <td>{{ item }}</td>
+        <td><a href="/control/update_cos/1">設定</a></td>
+    </tr>  
+    {% endfor %}
+</table>
+<p>(OK 服務正常; NO 服務暫停)</P>
+
+
+
 <tr>
     <a href="/user/logout">退出</a>
 </tr>
